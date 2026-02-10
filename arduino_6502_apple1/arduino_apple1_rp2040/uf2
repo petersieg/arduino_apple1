@@ -1,0 +1,3 @@
+#!/bin/sh
+$HOME/Library/Arduino15/packages/rp2040/tools/pqt-picotool/4.1.0-1aec55e/picotool uf2 convert $1 $1.uf2
+
