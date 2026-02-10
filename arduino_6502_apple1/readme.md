@@ -45,6 +45,9 @@ D020:1 -> Assembler (WOZMON gets back to wozmon)
 E000
 R
 
+Send files though terminal program with char delay and line delay!
+Lines must end with CR+LF!
+
 To get back from basic to wozmon:
 CALL -256
 
