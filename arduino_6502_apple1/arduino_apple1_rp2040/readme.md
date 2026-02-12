@@ -1,4 +1,4 @@
-## Raspberry PI 2040 MCU
+## Apple 1 emu for Raspberry PI 2040 MCU
 
 Code required NO changes for rpi2040, compared to standard arduino ino.
 
