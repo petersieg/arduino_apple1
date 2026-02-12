@@ -1,4 +1,4 @@
-# apple 1 with old graphics card and ps/2 keyboard
+# Apple 1 emu with old graphics card and ps/2 keyboard
 
 In June 2018, someone from mk forum offered an old graphics card for just shipping costs (thx Günter).
 
