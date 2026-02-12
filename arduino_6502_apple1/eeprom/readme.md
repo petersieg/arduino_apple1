@@ -1,4 +1,4 @@
-# this is a 8x32k chip serial eeprom bank
+# This is a 8x32k chip serial eeprom bank
 
 It can be utilized to copy ram to a disk (32k 24LC256 serial eeprom chip) and back.
 
