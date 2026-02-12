@@ -51,8 +51,12 @@ Lines must end with CR+LF!
 To get back from basic to wozmon:
 CALL -256
 
-To get back to basic from wozmon (warm start):
-E283R
+To get back to basic from wozmon: 
+E283R - (warm start - prog and vars will be retained)
+E000R - (cold start - prog and vars will be all cleared)
+
+Integer basic has no NEW to clear everything.
+So CALL -256; Then E000R must be used.
 
 ---
 
