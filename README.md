@@ -21,7 +21,7 @@ dramarduino.zip - 4164/41256 DRAM Tester with Arduino UNO
 
 pw_freqcnt.zip - frequency counter
 
-A1replica.zip - Apple 1 replica gerber files
+A1replica.zip - Apple 1 replica gerber files - see: https://www.applefritter.com/content/apple-1-replica-gerber-files
 
 
 
