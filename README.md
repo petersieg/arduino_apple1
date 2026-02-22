@@ -23,5 +23,8 @@ pw_freqcnt.zip - frequency counter
 
 A1replica.zip - Apple 1 replica gerber files - see: https://www.applefritter.com/content/apple-1-replica-gerber-files
 
+And the revised A1replica file: Rev. 3 Modifications of Russian A1 By Logan Greer.zip
+see: https://www.applefritter.com/content/rev1-modifications-russian-apple-1-files
+and: https://www.applefritter.com/content/modifications-russian-apple-1-project-finished
 
 
