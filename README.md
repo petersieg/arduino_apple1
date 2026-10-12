@@ -12,7 +12,7 @@ https://github.com/ebruchez/apple1-party/tree/main - tools and libs using cc65 t
 
 https://github.com/petersieg/napple1 - nice apple 1 emulator using ncurses
 
-## minicom usage
+### minicom usage
 
 ASCII file upload with char and line delay:
 ```
