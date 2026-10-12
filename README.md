@@ -19,9 +19,9 @@ ASCII file upload with char and line delay:
 Integration into Minicom:
 
 You can configure ascii-xfr as a custom file transfer protocol inside Minicom by pressing Ctrl-A then O (Configure Minicom) 
--> File transfer protocols, and adding an entry:
+-> File transfer protocols, and adding an entry (-c = char delay in ms; -l = line delay in ms):
 • Name: Ascii
-• Program: /usr/bin/ascii-xfr -sv -c 5 -l 50
+• Program: /usr/bin/ascii-xfr -sv -c 10 -l 200
 
 Minicom Built-in Character/Line Delay Options
 
