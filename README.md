@@ -12,7 +12,24 @@ https://github.com/ebruchez/apple1-party/tree/main - tools and libs using cc65 t
 
 https://github.com/petersieg/napple1 - nice apple 1 emulator using ncurses
 
+## minicom usage
 
+ASCII file upload with char and line delay:
+```
+Integration into Minicom:
+
+You can configure ascii-xfr as a custom file transfer protocol inside Minicom by pressing Ctrl-A then O (Configure Minicom) 
+-> File transfer protocols, and adding an entry:
+• Name: Ascii
+• Program: /usr/bin/ascii-xfr -sv -c 5 -l 50
+
+Minicom Built-in Character/Line Delay Options
+
+If you are pasting text directly inside Minicom and dropping characters due to slow remote buffers:
+1. Press Ctrl-A, then Z to open the help menu.
+2. Press T (Terminal settings) to adjust line delays or configure character/newline pacing.
+```
+   
 ### some others files:
 
 f-gen.zip - simple frequency generator; just arduino uno required - python tkinter gui on PC
