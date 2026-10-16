@@ -17,7 +17,10 @@ cd ../napple1
 ```
 Use Shift-P to load bin file. Give correct start address! (Start Address)R
 
-Then create an Apple 1 compatible hex file using https://github.com/davidly/hd
+Then create an Apple 1 compatible hex file using bin2woz
 ```
-hd -w:0x1000 ttt >ttt.hex
+-rw-r--r--  1 ich  staff     32 15 Okt 19:40 hello.bin
+ich@Air-von-ich ca65asm % ./bin2woz hello.bin 0x300
+0300: A2 00 BD 12 03 F0 08 09 80 20 EF FF E8 D0 F3 4C
+0310: 0F 03 0D 48 45 4C 4C 4F 20 57 4F 52 4C 44 0D 00
 ```
