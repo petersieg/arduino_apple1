@@ -1,0 +1,4 @@
+#!/bin/sh
+cp $1.bin ../napple1/prog/test.bin
+cd ../napple1
+./napple1
