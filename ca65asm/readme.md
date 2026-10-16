@@ -16,3 +16,8 @@ cd ../napple1
 ./napple1
 ```
 Use Shift-P to load bin file. Give correct start address! (Start Address)R
+
+Then create an Apple 1 compatible hex file using https://github.com/davidly/hd
+```
+hd -w:0x1000 ttt >ttt.hex
+```
