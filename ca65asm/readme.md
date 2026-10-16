@@ -8,7 +8,7 @@ Assemble script:
 ca65 $1.s
 ld65 -o $1.bin -t none $1.o none.lib
 ```
-Copy bin (*.o) to napple1 prog directory:
+Copy bin (*.o) to napple1 prog directory (here always fixed to test.bin - up 2 you):
 ```
 #!/bin/sh
 cp $1.o ../napple1/prog/test.bin
