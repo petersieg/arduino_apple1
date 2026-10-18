@@ -24,3 +24,9 @@ ich@Air-von-ich ca65asm % ./bin2woz hello.bin 0x300
 0300: A2 00 BD 12 03 F0 08 09 80 20 EF FF E8 D0 F3 4C
 0310: 0F 03 0D 48 45 4C 4C 4F 20 57 4F 52 4C 44 0D 00
 ```
+
+1 - Erzeuge Zufallszahlen (1-255) und gib sie als HEX aus
+2 - Erzeuge Zufallszahlen (1-255) und gib sie als Dezimalzahl aus
+3 - Gib zufällig mehrzeilige Meldungen aus
+4 - Gib zufällig / oder \ aus
+reverse - sortiere bis 1..9
