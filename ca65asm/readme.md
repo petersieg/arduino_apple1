@@ -30,3 +30,7 @@ ich@Air-von-ich ca65asm % ./bin2woz hello.bin 0x300
 3 - Gib zufällig mehrzeilige Meldungen aus
 4 - Gib zufällig / oder \ aus
 reverse - sortiere bis 1..9
+
+4:
+![4](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/4.png)
+
