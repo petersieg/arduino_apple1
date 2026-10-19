@@ -12,7 +12,7 @@ screen /dev/tty... 9600 starten
 
 ![matrix](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/matrix/matrix.png)
 
-![matrix.mov](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/matrix/matrix.mov)
+![matrix.mp4](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/matrix/matrix.mp4)
 
 https://github.com/user-attachments/assets/117e2ce0-0a03-4297-92cc-4341cf3d9b5f
 
