@@ -35,6 +35,8 @@ ich@Air-von-ich ca65asm % ./bin2woz hello.bin 0x300
 
 reverse - sortiere bis 1..9
 
+arecibo/arecibo - show arecibo message
+
 4:
 
 ![4](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/4.png)
@@ -42,3 +44,7 @@ reverse - sortiere bis 1..9
 reverse:
 
 ![reverse](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/reverse.png)
+
+arecibo:
+
+![arecibo](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/arecibo.png)
