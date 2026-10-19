@@ -37,6 +37,8 @@ reverse - sortiere bis 1..9
 
 arecibo/arecibo - show arecibo message
 
+matrix - matrix like screen output using vt100 esc sequences
+
 4:
 
 ![4](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/4.png)
@@ -48,3 +50,8 @@ reverse:
 arecibo:
 
 ![arecibo](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/arecibo.png)
+
+matrix:
+
+![matrix](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/matrix/matrix.png)
+
