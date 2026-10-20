@@ -39,6 +39,8 @@ arecibo/arecibo - show arecibo message
 
 matrix - matrix like screen output using vt100 esc sequences
 
+connect4 - as name says ;-)
+
 4:
 
 ![4](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/4.png)
@@ -55,3 +57,6 @@ matrix:
 
 ![matrix](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/matrix/matrix.png)
 
+connect4:
+
+![connect4](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/connect4/connect4.png)
