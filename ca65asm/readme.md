@@ -53,7 +53,7 @@ arecibo:
 
 ![arecibo](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/arecibo.png)
 
-matrix:
+matrix (only works on hardware emulator with serial output into terminal that can handle vt100 codes):
 
 ![matrix](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/matrix/matrix.png)
 
