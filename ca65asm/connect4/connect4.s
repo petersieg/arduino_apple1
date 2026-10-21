@@ -325,8 +325,9 @@ computer_try_win:
         LDA #'O'
         JSR check_win
 
-        BNE computer_keep_win
-
+        BEQ computer_win_not_found
+        JMP computer_keep_win
+computer_win_not_found:
         LDY slot
         LDA #' '
         STA board,Y
@@ -351,8 +352,9 @@ computer_try_block:
         LDA #'X'
         JSR check_win
 
-        BNE computer_block_found
-
+        BEQ computer_block_not_found
+        JMP computer_block_found
+computer_block_not_found:
         LDY slot
         LDA #' '
         STA board,Y
@@ -363,7 +365,91 @@ computer_block_next:
         CMP #7
         BNE computer_try_block
 
-        LDX #0
+        ; Nach Sofortgewinn und Sofortblock:
+        ; benachbarte X in der unteren Reihe strategisch blockieren.
+        JSR computer_block_bottom_pair
+        BCS computer_move_done
+
+        JMP computer_fallback
+
+computer_move_done:
+        RTS
+
+; ------------------------------------------------------------
+; Zwei benachbarte X in der unteren Reihe erkennen.
+; Besetzt bevorzugt ein freies Nachbarfeld links, sonst rechts.
+; Rueckgabe: Carry=1, wenn O gesetzt wurde; sonst Carry=0.
+; ------------------------------------------------------------
+
+computer_block_bottom_pair:
+        LDA #0
+        STA col
+
+computer_pair_loop:
+        ; Nur Startspalten 0 bis 5 pruefen.
+        LDA col
+        CMP #6
+        BCS computer_pair_not_found
+
+        ; Index des linken X: 35 + col (unterste Reihe)
+        CLC
+        ADC #35
+        TAY
+        LDA board,Y
+        CMP #'X'
+        BNE computer_pair_next
+
+        ; Rechtes Nachbarfeld muss ebenfalls X sein.
+        INY
+        LDA board,Y
+        CMP #'X'
+        BNE computer_pair_next
+
+        ; Paar gefunden. Zuerst das Feld links versuchen.
+        LDA col
+        BEQ computer_pair_try_right
+
+        SEC
+        SBC #1
+        CLC
+        ADC #35
+        TAY
+        LDA board,Y
+        CMP #' '
+        BNE computer_pair_try_right
+
+        LDA #'O'
+        STA board,Y
+        SEC
+        RTS
+
+computer_pair_try_right:
+        ; Rechts vom Paar liegt Spalte col+2.
+        LDA col
+        CLC
+        ADC #2
+        CMP #7
+        BCS computer_pair_next
+
+        CLC
+        ADC #35
+        TAY
+        LDA board,Y
+        CMP #' '
+        BNE computer_pair_next
+
+        LDA #'O'
+        STA board,Y
+        SEC
+        RTS
+
+computer_pair_next:
+        INC col
+        JMP computer_pair_loop
+
+computer_pair_not_found:
+        CLC
+        RTS
 
 ; ------------------------------------------------------------
 ; Computer-Fallback
@@ -405,13 +491,12 @@ computer_place:
         RTS
 
 ; ------------------------------------------------------------
-; Gewinnpruefung
-;
+; Gewinnpruefung fuer Apple-1 / 6502
 ; Eingang: A = 'X' oder 'O'
 ; Ausgang: A = 1 bei vier in einer Reihe, sonst 0
 ;
-; Es werden vier Richtungen geprueft:
-; horizontal, vertikal, diagonal rechts, diagonal links.
+; Prueft alle horizontalen, vertikalen und diagonalen
+; Viererfenster. Spielfeld: 7 Spalten x 6 Reihen.
 ; ------------------------------------------------------------
 
 check_player_win:
@@ -423,6 +508,7 @@ check_computer_win:
 
 check_win:
         STA mark
+
         LDA #0
         STA row
 
@@ -431,22 +517,10 @@ win_row_loop:
         STA col
 
 win_col_loop:
-        LDX row
-        LDA row_offsets,X
-        CLC
-        ADC col
-        TAY
-
-        LDA board,Y
-        CMP mark
-        BEQ win_check_directions
-        JMP win_next_cell
-
-win_check_directions:
-        ; Horizontal: col muss <= 3 sein
+        ; Horizontale Vierer
         LDA col
         CMP #4
-        BCS win_skip_horizontal
+        BCS win_vertical
 
         JSR set_line_base
         LDA #1
@@ -454,11 +528,11 @@ win_check_directions:
         JSR test_line
         BNE win_yes
 
-win_skip_horizontal:
-        ; Vertikal: row muss <= 2 sein
+win_vertical:
+        ; Vertikale Vierer
         LDA row
         CMP #3
-        BCS win_skip_vertical
+        BCS win_diag_right
 
         JSR set_line_base
         LDA #7
@@ -466,15 +540,15 @@ win_skip_horizontal:
         JSR test_line
         BNE win_yes
 
-win_skip_vertical:
+win_diag_right:
         ; Diagonal nach rechts unten
         LDA row
         CMP #3
-        BCS win_skip_diag_right
+        BCS win_diag_left
 
         LDA col
         CMP #4
-        BCS win_skip_diag_right
+        BCS win_diag_left
 
         JSR set_line_base
         LDA #8
@@ -482,15 +556,15 @@ win_skip_vertical:
         JSR test_line
         BNE win_yes
 
-win_skip_diag_right:
+win_diag_left:
         ; Diagonal nach links unten
         LDA row
         CMP #3
-        BCS win_skip_diag_left
+        BCS win_next_cell
 
         LDA col
         CMP #3
-        BCC win_skip_diag_left
+        BCC win_next_cell
 
         JSR set_line_base
         LDA #6
@@ -498,32 +572,26 @@ win_skip_diag_right:
         JSR test_line
         BNE win_yes
 
-win_skip_diag_left:
-
 win_next_cell:
         INC col
         LDA col
         CMP #7
-        BEQ win_next_row
-        JMP win_col_loop
+        BNE win_col_loop
 
-win_next_row:
         INC row
         LDA row
         CMP #6
-        BEQ win_no
-
-        JMP win_row_loop
-
-win_yes:
-        LDA #1
-        RTS
+        BNE win_row_loop
 
 win_no:
         LDA #0
         RTS
 
-; Basisindex der aktuellen Zeile/Spalte berechnen
+win_yes:
+        LDA #1
+        RTS
+
+; Basisindex der aktuellen Zeile/Spalte
 set_line_base:
         LDX row
         LDA row_offsets,X
@@ -532,9 +600,7 @@ set_line_base:
         STA line_base
         RTS
 
-; Vier Felder mit mark vergleichen.
-; line_base = Startindex, line_step = Abstand.
-; Ergebnis A = 1 bei Treffer, sonst 0.
+; Vier Felder ab line_base mit Abstand line_step pruefen
 test_line:
         LDY line_base
         LDX #4
