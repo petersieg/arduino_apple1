@@ -65,6 +65,6 @@ connect4:
 
 fpcalc:
 
-![calc](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/cfpcalc/calc.png)
+![calc](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/fpcalc/calc.png)
 
 
