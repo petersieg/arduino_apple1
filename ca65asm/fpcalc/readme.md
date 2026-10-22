@@ -1,6 +1,6 @@
 ## floating point calculator using original wozfp.s routines
 
-# load at $1000 and start with 1000R - needs 8k Ram!
+### load at $1000 and start with 1000R - needs 8k Ram!
 
 If anybody want the original routines removed, please let me know, before any other action.
 
