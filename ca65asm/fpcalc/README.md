@@ -59,7 +59,7 @@ If anybody want the original routines removed, please let me know, before any ot
 
 https://www.applefritter.com/node/6876
 
-https://6502.org/source/floats/wozfp1.txt
+https://github.com/jefftranter/6502/tree/master/asm/wozfp
 
 ```
 ; ChatGPT 2026-10-22 P.Sieg
