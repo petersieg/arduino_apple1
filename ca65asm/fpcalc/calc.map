@@ -1,0 +1,65 @@
+Modules list:
+-------------
+calc.o:
+    CODE              Offs=000000  Size=000434  Align=00001  Fill=0000
+util.o:
+    CODE              Offs=000434  Size=0000E6  Align=00001  Fill=0000
+wozfp.o:
+    WOZLOG            Offs=000000  Size=0000EC  Align=00001  Fill=0000
+    WOZEXP            Offs=000000  Size=0000EC  Align=00001  Fill=0000
+    WOZCORE           Offs=000000  Size=0000EF  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+CODE                  001000  001519  00051A  00001
+WOZLOG                001D00  001DEB  0000EC  00001
+WOZEXP                001E00  001EEB  0000EC  00001
+WOZCORE               001F00  001FEE  0000EF  00001
+
+
+Exports list by name:
+---------------------
+FADD                      001F50 RLA    FDIV                      001F9D RLA    
+FIX                       001FE8 RLA    FLOAT                     001F2C RLA    
+FMUL                      001F77 RLA    FSUB                      001F4A RLA    
+GetKey                    001435 RLA    PrintCR                   0014B1 RLA    
+PrintChar                 0014F6 RLA    PrintString               0014C1 RLA    
+
+
+
+Exports list by value:
+----------------------
+GetKey                    001435 RLA    PrintCR                   0014B1 RLA    
+PrintString               0014C1 RLA    PrintChar                 0014F6 RLA    
+FLOAT                     001F2C RLA    FSUB                      001F4A RLA    
+FADD                      001F50 RLA    FMUL                      001F77 RLA    
+FDIV                      001F9D RLA    FIX                       001FE8 RLA    
+
+
+
+Imports list:
+-------------
+FADD (wozfp.o):
+    calc.o                    calc.s(10)
+FDIV (wozfp.o):
+    calc.o                    calc.s(10)
+FIX (wozfp.o):
+    calc.o                    calc.s(10)
+FLOAT (wozfp.o):
+    calc.o                    calc.s(10)
+FMUL (wozfp.o):
+    calc.o                    calc.s(10)
+FSUB (wozfp.o):
+    calc.o                    calc.s(10)
+GetKey (util.o):
+    calc.o                    calc.s(9)
+PrintCR (util.o):
+    calc.o                    calc.s(9)
+PrintChar (util.o):
+    calc.o                    calc.s(9)
+PrintString (util.o):
+    calc.o                    calc.s(9)
+
