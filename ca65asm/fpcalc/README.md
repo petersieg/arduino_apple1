@@ -61,6 +61,7 @@ https://www.applefritter.com/node/6876
 
 https://6502.org/source/floats/wozfp1.txt
 
+```
 ; ChatGPT 2026-10-22 P.Sieg
 ; Apple-1 Wozniak/Rankin floating-point calculator
 ; ca65, NMOS 6502, 8 KiB RAM ($0000-$1FFF)
@@ -95,5 +96,6 @@ https://6502.org/source/floats/wozfp1.txt
 ; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ; See the License for the specific language governing permissions and
 ; limitations under the License.
+```
 
 
