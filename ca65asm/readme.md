@@ -41,6 +41,8 @@ matrix - matrix like screen output using vt100 esc sequences
 
 connect4 - as name says ;-)
 
+fpcalc - foating point calculator using original wozfp.s routines
+
 4:
 
 ![4](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/4.png)
@@ -60,3 +62,9 @@ matrix (only works on hardware emulator with serial output into terminal that ca
 connect4:
 
 ![connect4](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/connect4/connect4.png)
+
+fpcalc:
+
+![calc](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/cfpcalc/calc.png)
+
+
