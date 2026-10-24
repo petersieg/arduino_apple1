@@ -1,10 +1,10 @@
 # Apple I 4x4 Tic-Tac-Toe — ca65
 
 ## Build
-Run `make` with cc65 installed. This creates `4xttt.bin`, linked to load at `$0300`.
+Run `make` with cc65 installed. This creates `4xttt.bin`, linked to load at `$1000`.
 
 ## Run
-Load the raw binary at `$0300` with the emulator's binary loader, then run `0300R` in the Woz Monitor.
+Load the raw binary at `$1000` with the emulator's binary loader, then run `1000R` in the Woz Monitor.
 
 This version uses the Woz Monitor `ECHO` routine at `$FFEF` for output. `putchar` preserves A around `ECHO`, which is important because the input character must still be present for hexadecimal parsing.
 
