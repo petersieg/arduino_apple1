@@ -41,7 +41,9 @@ matrix - matrix like screen output using vt100 esc sequences
 
 connect4 - as name says ;-)
 
-fpcalc - foating point calculator using original wozfp.s routines
+fpcalc - foating point calculator using original wozfp.s routines. Load at $1000 + needs more than 8k ram!
+
+4xttt - tic-tac-toe on 4x4 board. Load at $1000 + needs more than 8k ram!
 
 4:
 
@@ -67,4 +69,7 @@ fpcalc:
 
 ![calc](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/fpcalc/calc.png)
 
+4xttt:
+
+![4xttt](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/4xttt/4xttt.png)
 
