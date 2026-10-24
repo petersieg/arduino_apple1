@@ -51,7 +51,7 @@ fpcalc - foating point calculator using original wozfp.s routines. Load at $1000
 
 reverse:
 
-![reverse](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/reverse.png)
+![reverse](https://github.com/petersieg/arduino_apple1/blob/master/ca65asm/reverse/reverse.png)
 
 arecibo:
 
